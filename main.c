@@ -4,11 +4,18 @@
  */
 int main(void)
 {
-	char *filename = "/bin/ls";
-	char *argv[] = {"/bin/ls", "-l", "/tmp", NULL};
+	char *input = NULL;
+        char *filename = "/bin/ls";
+	size_t size = NULL;
 
+	run_prompt();
 
-	_execute(filename, argv);
+	if (getline(&input, &size, stdin) == -1)
+		return (1);
 
+	_execute(filename, args);
+	run_prompt();
+
+	free(input);
 	return (0);
 }

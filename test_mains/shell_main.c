@@ -10,7 +10,7 @@ int main(void)
 	input = NULL;
 	bufsize = NULL;
 
-/* need to check if interactive --stat
+/* need to check if interactive
  * if interactive:
  */
 	write(STDOUT_FILENO, "$ ", 2);

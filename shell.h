@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#define BUFLEN 1024
+#define BUFSIZE 1024
 #define DELIM " \n"
 
 /* execute */
@@ -18,5 +18,8 @@ void _execute(char *filename, char *argv[]);
 void putstring(char *str);
 int _putchar(char c);
 int _strlen(char *s);
+
+/* helpers */
+void run_prompt(void);
 
 #endif /*SHELL_H*/
