@@ -11,7 +11,7 @@ void _execute(char *filename, char *argv[])
 
 	pid = fork();
 
-	if(pid == -1)
+	if (pid == -1)
 		perror("Fork error");
 
 	else if (pid == 0)
