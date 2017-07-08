@@ -83,3 +83,29 @@ char *_strcat(char *dest, char *src)
 	dest[i] += '\0';
 	return (dest);
 }
+
+/**
+ * _strncpy - copies a string
+ * @src: string to be copied
+ * @dest: location of newly copied string
+ * @n: bytes of src to copy
+ * Return: pointer to newly copied string
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int i;
+
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+
+/* If there is no null byte among the first n
+ * bytes of src, the string placed in dest will
+ * not be null-terminated so need to add null byte.
+ */
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
+}
