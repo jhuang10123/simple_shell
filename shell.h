@@ -9,7 +9,13 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #define BUFSIZE 1024
-#define DELIM " \n"
+#define DELIM " \n\t"
+
+typedef struct builtin
+{
+	char *command;
+	void (*f)();
+} builtin;
 
 /* execute */
 void _execute(char *filename, char *argv[]);

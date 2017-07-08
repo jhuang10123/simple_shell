@@ -14,12 +14,12 @@ char **tokenize(char *str)
 		perror("Malloc Error");
 		return (NULL);
 	}
-	token = strtok(str, " ");
+	token = strtok(str, DELIM);
 
 	for (i = 0; token != NULL; i++)
 	{
 		array[i] = token;
-		token = strtok(NULL, " ");
+		token = strtok(NULL, DELIM);
 	}
 
 	array[i] = NULL;
@@ -27,7 +27,7 @@ char **tokenize(char *str)
 }
 
 /*
-
+-- need to correct --
 int main(void)
 {
         char *str = " I am a test string ";
@@ -42,5 +42,4 @@ int main(void)
 
         return (0);
 }
-
 */
