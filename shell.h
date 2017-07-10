@@ -8,8 +8,16 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#define BUFSIZE 1024
-#define DELIM " \n\t"
+#define DELIM " \n\r\t"
+
+extern char **environ;
+
+typedef struct list
+{
+	char *value;
+	struct list *next;
+
+} list_t;
 
 typedef struct builtin
 {
@@ -20,12 +28,20 @@ typedef struct builtin
 /* execute */
 void _execute(char *filename, char *argv[]);
 
-/* string */
+/* strings.c */
 void putstring(char *str);
-int _putchar(char c);
+char *_strcat(char *dest, char *src);
 int _strlen(char *s);
+int _strcmp(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
 
 /* helpers */
 void run_prompt(void);
+int _putchar(char c);
+
+/* PATH */
+list_t *find_path(void);
+int check_path(list_t list, char *input);
+list_t *add_node_end(list_t **head, char *value);
 
 #endif /*SHELL_H*/

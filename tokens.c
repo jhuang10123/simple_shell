@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * -- need to valgrind --
+ *
  */
 char **tokenize(char *str)
 {
@@ -26,20 +26,3 @@ char **tokenize(char *str)
 	return (array);
 }
 
-/*
--- need to correct --
-int main(void)
-{
-        char *str = " I am a test string ";
-        char **array;
-        int i;
-
-	array = tokenize(str);
-        for (i = 0; array[i] != NULL; i++)
-	{
-                printf("array[%d] = %s", i, array[i]);
-        }
-
-        return (0);
-}
-*/

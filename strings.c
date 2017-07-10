@@ -13,19 +13,6 @@ void putstring(char *str)
 }
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: number of chars printed
- */
-int _putchar(char c)
-{
-	int i;
-
-	i = write(1, &c, 1);
-	return (i);
-}
-/**
  * _strlen - finds length of a string
  * @s: string
  * Return: string length
@@ -74,6 +61,9 @@ char *_strcat(char *dest, char *src)
 	while (dest[i] != '\0')
 		i++;
 
+	dest[i] = "/";
+	i++;
+
 	while (src[j] != '\0')
 	{
 		dest[i] = src[j];
@@ -85,27 +75,19 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- * _strncpy - copies a string
+ * _strcpy - copies a string
  * @src: string to be copied
  * @dest: location of newly copied string
- * @n: bytes of src to copy
  * Return: pointer to newly copied string
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[i] = src[i];
-
-/* If there is no null byte among the first n
- * bytes of src, the string placed in dest will
- * not be null-terminated so need to add null byte.
- */
-	while (i < n)
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		dest[i] = '\0';
-		i++;
+		dest[i] = src[i];
 	}
+	dest[i] = 0;
 	return (dest);
 }
