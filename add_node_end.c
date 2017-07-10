@@ -3,7 +3,7 @@
  * add_nodeint_end - adds a new node at the end of a listint_t list.
  * @head: pointer to head
  * @value: value in new node
- * Return: new node
+ * Return: head of list
  */
 list_t *add_node_end(list_t **head, char *value)
 {
@@ -30,5 +30,5 @@ list_t *add_node_end(list_t **head, char *value)
                 new->value = value;
                 new->next = NULL;
         }
-        return (new);
+        return (*head);
 }

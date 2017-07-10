@@ -41,7 +41,7 @@ int _putchar(char c);
 
 /* PATH */
 list_t *find_path(void);
-int check_path(list_t list, char *input);
+int check_path(list_t *list, char *input);
 list_t *add_node_end(list_t **head, char *value);
 
 #endif /*SHELL_H*/

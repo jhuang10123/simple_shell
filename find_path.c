@@ -7,32 +7,33 @@ list_t *find_path(void)
 	list_t *head;
 	list_t *list;
 	char *orig;
-
-/*	char *cpy_path; */
 	char *token;
 
 	head = NULL;
 
-/*
-	list = malloc(sizeof(list_t) * 10);
-	if (list == NULL)
-		return (NULL);
-*/
-
 	orig = getenv("PATH");
 /** check return value */
 
-/*	cpy_path = _strcpy(cpy_path, orig); */
 	token = strtok(orig, ":");
 
-	while (token != NULL)
+	while (orig != NULL)
 	{
-		list = add_node_end(&head, token);
-		if (list == NULL)
-			return (NULL);
+		if (token == NULL)
+			break;
+		else
+		{
+			list = add_node_end(&head, token);
 
+			printf("token = %s\n", token);
+/*
+  printf("%s\n\n", list->value);
+*/
+			if (list == NULL)
+				return (NULL);
+		}
 		token = strtok(NULL, ":");
 	}
 
+	printf("head value = %s\n", head->value);
 	return (head);
 }
