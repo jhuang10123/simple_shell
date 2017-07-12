@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- *
+ * main - 
  */
 int main(void)
 {
@@ -25,7 +25,7 @@ int main(void)
 		if (_builtin(tokens[0]) == 1)
 		{
 			printf("inside builtin check loop/n");
-			path = find_path();
+			path = get_path();
 
 			filename = check_path(path, tokens[0]);
 			if (file_stat(filename) == 0)

@@ -1,6 +1,9 @@
 #include "shell.h"
 /**
- *
+ * check_path - concat user input to values of linked list
+ * @list: linked list containing tokenized path
+ * @input: user input
+ * Return: full path if found, else original user input
  */
 char *check_path(list_t *list, char *input)
 {
@@ -33,7 +36,7 @@ trcpy: %s should = str after strcpy: %s\n", str, list->value);
 		{
 			printf("stat: file exists\n");
 			return (full_path);
-		}
+x		}
 	}
 	printf("file does not exist\n");
 	return (input);
@@ -41,6 +44,8 @@ trcpy: %s should = str after strcpy: %s\n", str, list->value);
 
 /**
  * file_stat - check whether file exists
+ * @str: string containing full path of a command
+ * Return: 0 if file exist, else 1
  */
 int file_stat(char *str)
 {

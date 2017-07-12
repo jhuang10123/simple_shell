@@ -1,8 +1,9 @@
 #include "shell.h"
 /**
- *
+ * get_path - tokenize PATH and store values in a linked list
+ * Return: head/ pointer to first node of linked list
  */
-list_t *find_path(void)
+list_t *get_path(void)
 {
 	list_t *head;
 	list_t *list;

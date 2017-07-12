@@ -1,7 +1,8 @@
 #include "shell.h"
 /**
  * _builtin - searches for builtin and finds it's corresponding handling fcn
- *
+ * @command - command to search
+ * Return: 0 if command found, else 1.
  */
 int _builtin(char* command)
 {
