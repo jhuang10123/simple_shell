@@ -23,7 +23,7 @@ int main(void)
 		{
 			printf("buffer after getline: %s/n", buffer);
 			tokens = tokenize(buffer);
-			printf("/n");
+			printf("tokenized/n");
 
 			if (_builtin(tokens[0]) == 1)
 			{
