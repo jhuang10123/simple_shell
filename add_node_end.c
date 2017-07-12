@@ -14,6 +14,7 @@ list_t *add_node_end(list_t **head, char *value)
                 return (NULL);
 
         new->value = value;
+	new->next = NULL;
 
         if (*head != NULL)
         {
@@ -27,8 +28,7 @@ list_t *add_node_end(list_t **head, char *value)
         else
         {
                 *head = new;
-                new->value = value;
-                new->next = NULL;
+
         }
-        return (*head);
+        return (new);
 }

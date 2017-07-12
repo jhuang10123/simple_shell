@@ -1,21 +1,53 @@
 #include "shell.h"
 /**
- * test files
+ *
  */
 int main(void)
 {
-	char *input = NULL;
-        char *filename = "/bin/ls";
-	size_t size = NULL;
+	struct stat sb;
+	int noninteract;
+	char *buffer, *filename;
+	char **tokens;
+	size_t n;
+	list_t *path;
 
-	run_prompt();
+	if ((sb.st_mode & S_IFMT) == S_IFIFO)
+		noninteract = 1;
 
-	if (getline(&input, &size, stdin) == -1)
+	if (noninteract == 0)
+		run_prompt();
+
+	if (noninteract == 1)
+	{
+	while (getline(&buffer, &n, stdin)!= -1)
+	{
+		printf("buffer after getline: %s/n", buffer);
+		tokens = tokenize(buffer);
+
+		if (_builtin(tokens[0]) == 1)
+		{
+			printf("inside builtin check loop/n");
+			path = find_path();
+
+			filename = check_path(path, tokens[0]);
+			if (file_stat(filename) == 0)
+			{
+				printf("file stat loop /n");
+				_execute(filename, tokens);
+/* perror */
+			}
+
+/*			else
+			error; */
+		}
+		if (noninteract == 0)
+		{
+			printf("noninteract = 0 /n");
+			run_prompt();
+		}
+	}
+	if (getline(&buffer, &n, stdin)!= -1)
 		return (1);
-
-	_execute(filename, args);
-	run_prompt();
-
-	free(input);
+	}
 	return (0);
 }

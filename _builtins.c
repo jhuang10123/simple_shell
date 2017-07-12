@@ -3,11 +3,45 @@
  * _builtin - searches for builtin and finds it's corresponding handling fcn
  *
  */
-void _builtin()
+int _builtin(char* command)
 {
+	int i;
+
+	builtin list[] = {
+		{"env", env_var},
+		{"exit", exit_fcn},
+		{NULL, NULL}
+	};
+
+	for (i = 0; list[i].command != NULL; i++)
+	{
+		if (command == list[i].command)
+			list[i].f();
+		return (0);
+	}
+	return (1);
 
 }
 
 /**
- * exit 
+ * env_var - prints environment variable
  */
+void env_var(void)
+{
+	int i;
+
+	i = 0;
+	while (environ[i] != NULL)
+	{
+		putstring(environ[i]);
+		_putchar('\n');
+	}
+}
+
+/**
+ * exit_fcn - exits function
+ */
+void exit_fcn(void)
+{
+	exit(0);
+}

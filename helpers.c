@@ -4,7 +4,7 @@
  */
 void run_prompt(void)
 {
-	char *buffer = "$ ";
+	char *buffer = "($) ";
 
 	write(1, buffer, 3);
 }

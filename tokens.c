@@ -25,4 +25,3 @@ char **tokenize(char *str)
 	array[i] = NULL;
 	return (array);
 }
-
