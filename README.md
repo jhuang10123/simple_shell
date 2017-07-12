@@ -1,5 +1,6 @@
 # Simple Shell(hsh)  
-A Holberton School project replicating a basic version of UNIX shell.  
+Simple shell project is a Holberton School project replicating a basic command line interpreter(\
+shell) that executes commands by evaluating user input. 
 
 
 ## File Descriptions  
