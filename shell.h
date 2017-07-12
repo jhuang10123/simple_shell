@@ -42,6 +42,7 @@ char *_strcpy(char *dest, char *src);
 
 /* token */
 char **tokenize(char *str);
+
 /* helpers */
 void run_prompt(void);
 int _putchar(char c);

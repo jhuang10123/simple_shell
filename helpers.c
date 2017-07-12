@@ -5,8 +5,11 @@
 void run_prompt(void)
 {
 	char *buffer = "($) ";
+	int len;
 
-	write(1, buffer, 3);
+	len = _strlen(buffer);
+
+	write(1, buffer, len);
 }
 
 /**
