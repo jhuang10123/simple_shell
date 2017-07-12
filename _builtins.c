@@ -16,9 +16,12 @@ int _builtin(char* command)
 
 	for (i = 0; list[i].command != NULL; i++)
 	{
-		if (command == list[i].command)
+		if (_strcmp(command, list[i].command) == 0)
+		{
 			list[i].f();
-		return (0);
+			printf("built in loop for %s\n", list[i].command);
+			return (0);
+		}
 	}
 	return (1);
 

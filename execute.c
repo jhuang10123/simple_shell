@@ -16,7 +16,7 @@ void _execute(char *filename, char *argv[])
 
 	else if (pid == 0)
 	{
-		execve(filename, argv, NULL);
+		execve(filename, argv, environ);
 		perror("Execute Error");
 	}
 	else

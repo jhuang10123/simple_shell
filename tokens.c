@@ -10,12 +10,15 @@ char **tokenize(char *str)
 	char *token;
 	int i;
 
-	array = malloc(sizeof(char *) * 1024);
+	array = malloc(sizeof(char *) * 100);
 	if (array == NULL)
 	{
 		perror("Malloc Error");
 		return (NULL);
 	}
+
+	token = malloc(sizeof(char ) * 100);
+
 	token = strtok(str, DELIM);
 
 	for (i = 0; token != NULL; i++)

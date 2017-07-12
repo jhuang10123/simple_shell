@@ -30,13 +30,14 @@ trcpy: %s should = str after strcpy: %s\n", str, list->value);
 
 		full_path = _strcat(str, input);
 		printf("path after concat token and input\n %s\n\n", full_path);
-		list = list->next;
 
 		if (stat(str, &sb) == 0)
 		{
 			printf("stat: file exists\n");
+			printf("check_path retval = %s\n", full_path);
 			return (full_path);
-x		}
+		}
+		list = list->next;
 	}
 	printf("file does not exist\n");
 	return (input);

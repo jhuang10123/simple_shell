@@ -49,7 +49,7 @@ int _putchar(char c);
 int file_stat(char *str);
 
 /* path */
-list_t *find_path(void);
+list_t *get_path(void);
 char *check_path(list_t *list, char *input);
 list_t *add_node_end(list_t **head, char *value);
 
