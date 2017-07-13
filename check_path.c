@@ -28,8 +28,8 @@ char *check_path(list_t *list, char *input)
 		if (file_stat(full_path) == 0)
 			return (full_path);
 
-		free(full_path);
 		list = list->next;
 	}
+	free(full_path);
 	return (input);
 }

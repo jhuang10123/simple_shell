@@ -15,3 +15,16 @@ int _strncmp(char *s1, char *s2, int n)
 	}
 	return (-1);
 }
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: number of chars printed
+ */
+int _putchar(char c)
+{
+        int i;
+
+        i = write(1, &c, 1);
+        return (i);
+}

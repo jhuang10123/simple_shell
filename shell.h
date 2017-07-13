@@ -32,7 +32,7 @@ void exit_fcn(char *envp[]);
 void _execute(char *filename, char *argv[], char *envp[]);
 
 /* strings.c */
-void putstring(char *str);
+void _putstring(char *str);
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
 int _strcmp(char *s1, char *s2);

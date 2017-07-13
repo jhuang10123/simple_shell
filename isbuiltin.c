@@ -36,7 +36,7 @@ void env_var(char *envp[])
 	i = 0;
 	while (envp[i] != NULL)
 	{
-		putstring(envp[i]);
+		_putstring(envp[i]);
 		_putchar('\n');
 		i++;
 	}
