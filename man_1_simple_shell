@@ -1,0 +1,32 @@
+.TH simple_shell 1 "07 09 2017" "1.0"
+.SH NAME
+simple_shell - a basic replication of a command line interpreter(shell) that executes commands by evaluating user input.   
+
+.SH SYPNOSIS
+.B hsh
+[command_string [arg...][file]]  
+
+.SH DESCRIPTION
+\fBsimple_shell\fR is an simple command language interpreter that executes commands read from the standard input or from a file. 
+
+TO EDIT:  
+builtin shell-builtin [arguments]  
+Execute the specified shell builtin, passing it arguments, and return its exit status. This is useful when defining a function whose name is the same as a shell builtin, retaining the functionality of the builtin within the function. This shell currently supports \fBenv\fR and \fBexit\fR  
+
+.SH RETURN VALUES
+
+.SH NOTES
+This shell current supports the command ls and implements builtins env and exit.  
+
+.SH EXAMPLE
+
+ 
+.SH SEE ALSO
+.B bash(1)
+
+.SH BUGS
+Not all memory freed.
+
+
+.SH AUTHORS
+Jennifer Huang, Alexa Inga.
