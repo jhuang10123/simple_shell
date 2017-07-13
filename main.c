@@ -34,8 +34,8 @@ int main(int argc, char *argv[], char *envp[])
 
 	while (getline(&buffer, &n, stdin)!= -1)
 	{
-		if (buffer[0] == "\n")
-			run_prompt();
+		if (_strncmp(buffer, "\n", 1) == 0)
+		    run_prompt();
 
 		tokens = tokenize(buffer);
 
@@ -46,7 +46,6 @@ int main(int argc, char *argv[], char *envp[])
 			filename = check_path(path, tokens[0]);
 
 			free_linked(path);
-			free(filename);
 
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
@@ -55,11 +54,6 @@ int main(int argc, char *argv[], char *envp[])
 
 			if (pipe == 0)
 				run_prompt();
-		}
-		if (getline(&buffer, &n, stdin)!= -1)
-		{
-			free(buffer);
-			return (1);
 		}
 	}
 	return (0);

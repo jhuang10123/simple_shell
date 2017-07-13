@@ -46,6 +46,7 @@ char **tokenize(char *str);
 void run_prompt(void);
 int _putchar(char c);
 int file_stat(char *str);
+char *_memset(char *buffer);
 
 /* path */
 list_t *get_path(void);

@@ -6,7 +6,7 @@
  */
 int isbuiltin(char* token, char *envp[])
 {
-	int i;
+	int i, len;
 
 	builtin_t list[] = {
 		{"env", env_var},
@@ -14,9 +14,11 @@ int isbuiltin(char* token, char *envp[])
 		{NULL, NULL}
 	};
 
+	len = _strlen(token);
+
 	for (i = 0; list[i].command != NULL; i++)
 	{
-		if (_strcmp(token, list[i].command) == 0)
+		if (_strncmp(token, list[i].command, len) == 0)
 		{
 			list[i].f(envp);
 			printf("built in loop for %s\n", list[i].command);

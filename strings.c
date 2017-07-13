@@ -46,7 +46,7 @@ int _strcmp(char *s1, char *s2)
 	return (s2[i] - s1[i]);
 }
 /**
- * _strcat - concat 2 strings
+ * _strcat - concatenates 2 strings
  * @dest: dest string
  * @src: string to add to dest
  * Return: pointer to newly concatenated dest string
