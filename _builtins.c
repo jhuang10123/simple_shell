@@ -4,11 +4,11 @@
  * @command - command to search
  * Return: 0 if command found, else 1.
  */
-int _builtin(char* command)
+int _builtin(char* command, char *envp[])
 {
 	int i;
 
-	builtin list[] = {
+	builtin_t list[] = {
 		{"env", env_var},
 		{"exit", exit_fcn},
 		{NULL, NULL}
@@ -18,7 +18,7 @@ int _builtin(char* command)
 	{
 		if (_strcmp(command, list[i].command) == 0)
 		{
-			list[i].f();
+			list[i].f(envp);
 			printf("built in loop for %s\n", list[i].command);
 			return (0);
 		}
@@ -30,22 +30,24 @@ int _builtin(char* command)
 /**
  * env_var - prints environment variable
  */
-void env_var(void)
+void env_var(char *envp[])
 {
 	int i;
 
 	i = 0;
-	while (environ[i] != NULL)
+	while (envp[i] != NULL)
 	{
-		putstring(environ[i]);
+		putstring(envp[i]);
 		_putchar('\n');
+		i++;
 	}
 }
 
 /**
  * exit_fcn - exits function
  */
-void exit_fcn(void)
+void exit_fcn(char *envp[])
 {
+	(void)envp;
 	exit(0);
 }

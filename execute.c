@@ -4,7 +4,7 @@
  * @filename: name of file
  * @argv: arguments
  */
-void _execute(char *filename, char *argv[])
+void _execute(char *filename, char *argv[], char *envp[])
 {
 	pid_t pid;
 	int status;
@@ -16,7 +16,7 @@ void _execute(char *filename, char *argv[])
 
 	else if (pid == 0)
 	{
-		execve(filename, argv, environ);
+		execve(filename, argv, envp);
 		perror("Execute Error");
 	}
 	else

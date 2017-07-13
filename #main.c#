@@ -37,10 +37,12 @@ int main(int argc, char *argv[], char *envp[])
 	{
 		printf("buffer after getline: %s\n", buffer);
 		tokens = tokenize(buffer);
+
+
 		free(buffer);
 		free(tokens);
 		exit(0);
-
+ 
 /* test check tokenize */
 		for (i = 0; tokens[i] != NULL; i++)
 		{

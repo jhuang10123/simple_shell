@@ -28,5 +28,7 @@ char **tokenize(char *str)
 	}
 
 	array[i] = NULL;
+
+	free(token);
 	return (array);
 }

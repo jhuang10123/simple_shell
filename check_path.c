@@ -10,6 +10,9 @@ char *check_path(list_t *list, char *input)
 	char *str, *full_path;
 	struct stat sb;
 
+	str = NULL;
+	full_path = NULL;
+
 	str = malloc(sizeof(char *) * 1024);
 	if (str == NULL)
 		return (NULL);
