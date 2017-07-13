@@ -63,6 +63,8 @@ int main(int argc, char *argv[], char *envp[])
 */
 			filename = check_path(path, tokens[0]);
 
+			free_linked(path);
+			free(filename);
 			/* 8,192 bytes in 1 blocks are definitely lost */
 			/* 	3 errors from 3 contexts */
 			/* free(buffer); */
@@ -74,6 +76,7 @@ int main(int argc, char *argv[], char *envp[])
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
 
+			free(tokens);
 			run_prompt();
 		}
 		if (getline(&buffer, &n, stdin)!= -1)

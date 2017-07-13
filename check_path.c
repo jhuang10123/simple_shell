@@ -28,6 +28,7 @@ char *check_path(list_t *list, char *input)
 
 		list = list->next;
 	}
+	free(full_path);
 	return (input);
 }
 
