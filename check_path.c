@@ -32,7 +32,10 @@ char *check_path(list_t *list, char *input)
 	}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/* free(full_path); */
+=======
+>>>>>>> parent of 5ec6060... 4 errors need corrections
 =======
 >>>>>>> parent of 5ec6060... 4 errors need corrections
 =======
