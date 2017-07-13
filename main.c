@@ -21,7 +21,6 @@ int main(int argc, char *argv[], char *envp[])
 	path = NULL;
 	tokens = NULL;
 
-
 	if (fstat(STDIN_FILENO, &sb) == -1)
 	{
 		exit(EXIT_FAILURE);
