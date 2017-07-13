@@ -46,8 +46,11 @@ int main(int argc, char *argv[], char *envp[])
 			filename = check_path(path, tokens[0]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			free_linked(path);
 =======
+=======
+>>>>>>> parent of 5ec6060... 4 errors need corrections
 			/* 8,192 bytes in 1 blocks are definitely lost */
 			/* 	3 errors from 3 contexts */
 			/* free(buffer); */
@@ -60,11 +63,14 @@ int main(int argc, char *argv[], char *envp[])
 				_execute(filename, tokens, envp);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 			free(tokens);
 
 			if (pipe == 0)
 				run_prompt();
 =======
+=======
+>>>>>>> parent of 5ec6060... 4 errors need corrections
 			run_prompt();
 		}
 		if (getline(&buffer, &n, stdin)!= -1)
