@@ -13,7 +13,11 @@ list_t *get_path(void)
 	head = NULL;
 
 	orig = getenv("PATH");
-/** check return value */
+	if (orig == NULL)
+	{
+		perror("getenv Error");
+		return (NULL);
+	}
 
 	token = strtok(orig, ":");
 
@@ -30,8 +34,6 @@ list_t *get_path(void)
 		}
 		token = strtok(NULL, ":");
 	}
-
-	printf("head value = %s\n", head->value);
 
 	list = head;
 
