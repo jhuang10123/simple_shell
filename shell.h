@@ -24,7 +24,7 @@ typedef struct builtin
 } builtin_t;
 
 /* builtin */
-int _builtin(char* command, char *envp[]);
+int isbuiltin(char* command, char *envp[]);
 void env_var(char *envp[]);
 void exit_fcn(char *envp[]);
 

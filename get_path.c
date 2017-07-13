@@ -25,10 +25,6 @@ list_t *get_path(void)
 		{
 			list = add_node_end(&head, token);
 
-			printf("token = %s\n", token);
-
-			printf("%s\n\n", list->value);
-
 			if (list == NULL)
 				return (NULL);
 		}
@@ -39,10 +35,5 @@ list_t *get_path(void)
 
 	list = head;
 
-	while (list != NULL)
-	{
-		printf("list value = %s\n", list->value);
-		list = list->next;
-	}
 	return (head);
 }

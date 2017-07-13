@@ -4,7 +4,7 @@
  * @command - command to search
  * Return: 0 if command found, else 1.
  */
-int _builtin(char* command, char *envp[])
+int isbuiltin(char* token, char *envp[])
 {
 	int i;
 
@@ -16,7 +16,7 @@ int _builtin(char* command, char *envp[])
 
 	for (i = 0; list[i].command != NULL; i++)
 	{
-		if (_strcmp(command, list[i].command) == 0)
+		if (_strcmp(token, list[i].command) == 0)
 		{
 			list[i].f(envp);
 			printf("built in loop for %s\n", list[i].command);
