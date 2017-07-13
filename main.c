@@ -50,12 +50,12 @@ int main(int argc, char *argv[], char *envp[])
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
 
-			free(tokens);
+			/* free(tokens); */
 
 			if (pipe == 0)
 				run_prompt();
-			run_prompt();
 		}
+		free_linked(tokens);
 	}
 	return (0);
 }

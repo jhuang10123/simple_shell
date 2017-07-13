@@ -6,7 +6,7 @@
  */
 int isbuiltin(char* token, char *envp[])
 {
-	int i, len;
+	int i;
 
 	builtin_t list[] = {
 		{"env", env_var},
@@ -14,11 +14,9 @@ int isbuiltin(char* token, char *envp[])
 		{NULL, NULL}
 	};
 
-	len = _strlen(token);
-
 	for (i = 0; list[i].command != NULL; i++)
 	{
-		if (_strncmp(token, list[i].command, len) == 0)
+		if (_strcmp(token, list[i].command) == 0)
 		{
 			list[i].f(envp);
 			return (0);
