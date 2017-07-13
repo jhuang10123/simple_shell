@@ -21,10 +21,7 @@ int isbuiltin(char* token, char *envp[])
 		if (_strncmp(token, list[i].command, len) == 0)
 		{
 			list[i].f(envp);
-			return (0);
-		}
-	}
-	return (1);
+
 
 }
 
