@@ -30,6 +30,9 @@ char *check_path(list_t *list, char *input)
 
 		list = list->next;
 	}
+<<<<<<< HEAD
 	/* free(full_path); */
+=======
+>>>>>>> parent of 5ec6060... 4 errors need corrections
 	return (input);
 }
