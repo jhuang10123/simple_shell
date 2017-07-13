@@ -8,28 +8,28 @@
 char *check_path(list_t *list, char *input)
 {
 	char *full_path;
-	struct stat sb;
 
-	full_path = malloc(sizeof(char *) * 1024);
+	full_path = malloc(sizeof(char *) * 100);
 	if (full_path == NULL)
 	{
 		perror("malloc Error");
 		return (NULL);
 	}
 
-	/* _memset(full_path); */
+	_memset(full_path);
 
 	while (list != NULL)
 	{
+
 		full_path = _strcpy(full_path, list->value);
 
 		full_path = _strcat(full_path, input);
 
-		if (stat(full_path, &sb) == 0)
+		if (file_stat(full_path) == 0)
 			return (full_path);
 
+		free(full_path);
 		list = list->next;
 	}
-	/* free(full_path); */
 	return (input);
 }

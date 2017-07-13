@@ -36,7 +36,7 @@ char *_memset(char *buffer)
 
         for (i = 0; buffer[i] != '\0'; i++)
 	{
-                buffer[i] = '\0';
+                buffer[i] = '0';
         }
         return (buffer);
 }
@@ -54,4 +54,15 @@ int file_stat(char *str)
 		return (0);
         else
                 return (1);
+}
+
+/**
+ * cmd_error - error message for command not found
+ * @s: name of command
+ */
+void cmd_error(char *filename)
+{
+	_putstring("hsh: 1: ");
+	_putstring(filename);
+	_putstring(": not found\n");
 }

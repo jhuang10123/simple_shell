@@ -52,7 +52,7 @@ int main(int argc, char *argv[], char *envp[])
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
 			else
-				_putstring("hsh: 1: %s: not found\n", filename);
+				cmd_error();
 
 			free(tokens);
 

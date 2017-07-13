@@ -47,6 +47,7 @@ void run_prompt(void);
 int _putchar(char c);
 int file_stat(char *str);
 char *_memset(char *buffer);
+void cmd_error(char *filename);
 
 /* path */
 list_t *get_path(void);
