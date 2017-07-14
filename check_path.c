@@ -25,10 +25,11 @@ char *check_path(list_t *list, char *input)
 
 		full_path = _strcat(full_path, input);
 
+		list = list->next;
+
 		if (file_stat(full_path) == 0)
 			return (full_path);
 
-		list = list->next;
 	}
 	free(full_path);
 	return (input);

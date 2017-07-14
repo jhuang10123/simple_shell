@@ -5,7 +5,7 @@
 int main(int argc, char *argv[], char *envp[])
 {
 	int built_retval;
-	char *buffer, *filename, *new;
+	char *buffer, *filename;
 	char **tokens;
 	size_t n;
 	list_t *path;
@@ -15,8 +15,8 @@ int main(int argc, char *argv[], char *envp[])
 	(void)argc;
 	(void)argv;
 
+	buffer = NULL;
 	pipe = 0;
-	new = buffer = NULL;
 	filename = NULL;
 	path = NULL;
 	tokens = NULL;
@@ -39,9 +39,8 @@ int main(int argc, char *argv[], char *envp[])
 		    run_prompt();
 		    continue;
 		}
-		new = pre_check(buffer);
 
-		tokens = tokenize(new);
+		tokens = tokenize(buffer);
 
 		built_retval = isbuiltin(tokens[0], envp);
 		if (built_retval == 1)
@@ -49,18 +48,21 @@ int main(int argc, char *argv[], char *envp[])
 			path = get_path();
 			filename = check_path(path, tokens[0]);
 
-			free_linked(path);
+			/* free_linked(path); */
 
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
 			else
 				cmd_error(filename);
 
-			free(tokens);
+			free_linked(path);
+			free(filename);
 
 			if (pipe == 0)
 				run_prompt();
 		}
+		free(buffer);
+		free(tokens);
 	}
 	return (0);
 }
