@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#define DELIM "\n\r\t"
+#define DELIM " \n\r\t"
 
 typedef struct list
 {
