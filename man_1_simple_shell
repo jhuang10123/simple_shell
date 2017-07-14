@@ -18,7 +18,11 @@ Execute the specified shell builtin, passing it arguments, and return its exit s
 This shell current supports the command ls and implements builtins env and exit.  
 
 .SH EXAMPLE
-To list files in the current directory:  
+To list files in the current directory in interactive mode:  
+.B ls
+
+To list files in the current directory in noninteractive mode:  
+.B echo 'ls' | ./hsh   
 
 
 .SH SEE ALSO

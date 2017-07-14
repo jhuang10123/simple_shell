@@ -26,11 +26,12 @@ To run in noninteractive mode, pipe command into this hsh: `echo \
 "ls -l" | ./hsh`  
 
 ## Example
-To run a simple `ls` command:  
-```
-#include "shell.h"  
+To run a simple `ls -l` command in interactive mode:  
+`($) ls -l`  
 
-```
+To run a simple ls -l in noninteractive mode:  
+`'ls' | ./hsh`  
+
 ## Authors
 Alexa Inga -  [Github](https://github.com/ )  
 Jennifer Huang - [Github](https://github.com/jhuang10123)
