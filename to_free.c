@@ -5,18 +5,18 @@
  */
 void free_linked(list_t *head)
 {
-        list_t *temp;
+	list_t *temp;
 
-        while (head != NULL)
-        {
-                temp = head;
-                head = head->next;
-                free(temp);
-        }
+	while (head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
 }
 
 /**
- * free_array - frees a 2d array
+ * free_2darray - frees a 2d array
  * @array: array to be freed
  */
 void free_2darray(char **array)
