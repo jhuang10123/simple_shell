@@ -35,7 +35,8 @@ list_t *get_path(void)
 		token = strtok(NULL, ":");
 	}
 
-	list = head;
+	free(token);
 
+	list = head;
 	return (head);
 }

@@ -48,21 +48,20 @@ int main(int argc, char *argv[], char *envp[])
 			path = get_path();
 			filename = check_path(path, tokens[0]);
 
-			/* free_linked(path); */
-
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
 			else
 				cmd_error(filename);
 
+
 			free_linked(path);
 			free(filename);
+			free(tokens);
 
 			if (pipe == 0)
 				run_prompt();
-		}
-		free(buffer);
-		free(tokens);
+			}
 	}
+	free(buffer);
 	return (0);
 }
