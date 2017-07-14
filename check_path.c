@@ -9,7 +9,7 @@ char *check_path(list_t *list, char *input)
 {
 	char *full_path;
 
-	full_path = malloc(sizeof(char *) * 100);
+	full_path = malloc(sizeof(char *) * 1024);
 	if (full_path == NULL)
 	{
 		perror("malloc Error");
