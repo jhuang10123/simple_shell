@@ -50,9 +50,10 @@ int main(int argc, char *argv[], char *envp[])
 
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
+/*
 			else
 				cmd_error(filename);
-
+*/
 
 			free_linked(path);
 			free(filename);
