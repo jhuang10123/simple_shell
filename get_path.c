@@ -25,7 +25,6 @@ list_t *get_path(void)
 	{
 		if (token == NULL)
 			break;
-		else
 		{
 			list = add_node_end(&head, token);
 

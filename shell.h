@@ -10,12 +10,21 @@
 #include <sys/wait.h>
 #define DELIM " \n\r\t"
 
+/**
+ * list - linked list
+ * @value: data stored
+ * @next: address to next node
+ */
 typedef struct list
 {
 	char *value;
 	struct list *next;
 } list_t;
 
+/**
+ * builtin - struct storing builtin commands
+ * @command: command for builtin
+ */
 typedef struct builtin
 {
 	char *command;
