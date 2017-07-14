@@ -5,7 +5,7 @@ shell) that executes commands by evaluating user input.
 
 ## File Descriptions  
 [shell.h](https://github.com/jhuang10123/simple_shell/blob/master/shell.h) - header file including macros , prototypes, & struct  
-[main.c](https://github.com/jhuang10123/simple_shell/blob/master/main.c) - takes user command and executes if file exists
+[main.c](https://github.com/jhuang10123/simple_shell/blob/master/main.c) - takes user command and executes if file exists  
 [tokens.c](https://github.com/jhuang10123/simple_shell/blob/master/tokens.c) - splits a character string into 2d array of tokens  
 [add_node_end.c](https://github.com/jhuang10123/simple_shell/blob/master/add_node_end.c) - adds a new node at the end of a listint_t list.  
 [check_path.c](https://github.com/jhuang10123/simple_shell/blob/master/check_path.c) - concat user input to values of linked list  
@@ -17,7 +17,7 @@ shell) that executes commands by evaluating user input.
 - `free_2darray(char **array)` - frees a 2D array  
 
 
-Helper Functions:
+Helper Functions:  
 [helpers.c](https://github.com/jhuang10123/simple_shell/blob/master/helpers.c) - helper functions:
 - `run_prompt(void)` - prints prompt to stdout  
 - `_memset(char *buffer)` - fills memory with null bytes  
