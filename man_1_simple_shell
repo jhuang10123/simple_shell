@@ -13,14 +13,14 @@ TO EDIT:
 builtin shell-builtin [arguments]  
 Execute the specified shell builtin, passing it arguments, and return its exit status. This is useful when defining a function whose name is the same as a shell builtin, retaining the functionality of the builtin within the function. This shell currently supports \fBenv\fR and \fBexit\fR  
 
-.SH RETURN VALUES
 
 .SH NOTES
 This shell current supports the command ls and implements builtins env and exit.  
 
 .SH EXAMPLE
+To list files in the current directory:  
 
- 
+
 .SH SEE ALSO
 .B bash(1)
 
