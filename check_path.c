@@ -16,8 +16,6 @@ char *check_path(list_t *list, char *input)
 		return (NULL);
 	}
 
-	/*_memset(full_path);*/
-
 	while (list != NULL)
 	{
 

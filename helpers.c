@@ -53,3 +53,13 @@ void cmd_error(char *filename)
 	_putstring(filename);
 	_putstring(": not found\n");
 }
+
+/**
+ * signal_handle - signal handler
+ * @n: signal
+ */
+void signal_handle(int n)
+{
+	(void) n;
+	_putstring("\n($)");
+}

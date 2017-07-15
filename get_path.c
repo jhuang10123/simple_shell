@@ -22,14 +22,14 @@ list_t *get_path(void)
 	token = strtok(orig, ":");
 
 	while (token != NULL)
-	  {
-	    list = add_node_end(&head, token);
+	{
+		list = add_node_end(&head, token);
 
-	    if (list == NULL)
-	      return (NULL);
+		if (list == NULL)
+			return (NULL);
 
-	    token = strtok(NULL, ":");
-	  }
+		token = strtok(NULL, ":");
+	}
 
 	return (list);
 }

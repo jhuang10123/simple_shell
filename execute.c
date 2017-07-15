@@ -15,10 +15,10 @@ void _execute(char *filename, char *argv[], char *envp[])
 	if (pid == -1)
 		perror("Fork error");
 
-	else if (pid == 0)
+	if (pid == 0)
 	{
-	  if (execve(filename, argv, envp) == -1)
-	    cmd_error(filename);
+		if (execve(filename, argv, envp) == -1)
+			cmd_error(filename);
 	}
 	else
 		wait(&status);

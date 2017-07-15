@@ -13,16 +13,17 @@ shell) that executes commands by evaluating user input.
 [get_path.c](https://github.com/jhuang10123/simple_shell/blob/master/get_path.c) - tokenize PATH and store values in a linked list  
 [isbuiltin.c](https://github.com/jhuang10123/simple_shell/blob/master/isbuiltin.c) - searches for builtin and finds it's corresponding handling fcn  
 [to_free.c](https://github.com/jhuang10123/simple_shell/blob/master/to_free.c) - frees lists
-- `free_linked(list_t *head)` - frees a linked list
+- `free_linked(list_t *head, char *buffer)` - frees a linked list and buffer  
 - `free_2darray(char **array)` - frees a 2D array  
-
+[run_path.c]() - store PATH in linked list and check if usr command exist  
 
 Helper Functions:  
 [helpers.c](https://github.com/jhuang10123/simple_shell/blob/master/helpers.c) - helper functions:
 - `run_prompt(void)` - prints prompt to stdout  
 - `_memset(char *buffer)` - fills memory with null bytes  
-- `file_stat(char *str)` - check whether file exists
+- `file_stat(char *str)` - check whether file exists  
 - `cmd_error(char *filename)`  
+- `signal_handle` - signal handler  
 [strings.c](https://github.com/jhuang10123/simple_shell/blob/master/strings.c) - helper string functions:
 - `_putstring(char *str)`  
 - `_strlen(char *s)`  
@@ -41,7 +42,7 @@ Clone simple_shell repository:
 ` git clone https://github.com/jhuang10123/simple_shell.git `  
 
 Compile program:  
-`gcc -Wall -Wextra -Werror -pedantic *.c -o hsh`
+`gcc -Wall -Wextra -Werror -pedantic *.c -o hsh`  
 
 Holberton shell can then be invoked by running the executable `hsh`
   
@@ -56,5 +57,5 @@ To run a simple `ls -l` command in interactive mode:
 
 
 ## Authors
-Alexa Inga -  [Github](https://github.com/alexainga2)  
-Jennifer Huang - [Github](https://github.com/jhuang10123)
+Jennifer Huang - [Github](https://github.com/jhuang10123)  
+Alexa Inga - [Github](https://github.com/alexainga2)  

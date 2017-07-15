@@ -5,13 +5,14 @@
 #include <errno.h>
 #include <unistd.h>
 #include <string.h>
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#define DELIM " \n\r\t"
+#define DELIM "\n\r\t "
 
 /**
- * list - linked list
+ * struct list - linked list
  * @value: data stored
  * @next: address to next node
  */
@@ -22,8 +23,9 @@ typedef struct list
 } list_t;
 
 /**
- * builtin - struct storing builtin commands
+ * struct builtin - struct storing builtin commands
  * @command: command for builtin
+ * @f: function pointer to builtin command
  */
 typedef struct builtin
 {
@@ -56,15 +58,18 @@ int _putchar(char c);
 int file_stat(char *str);
 char *_memset(char *buffer);
 void cmd_error(char *filename);
+void signal_handle(int n);
 
 /* path */
 list_t *get_path(void);
 char *check_path(list_t *list, char *input);
 list_t *add_node_end(list_t **head, char *value);
-void run_path(list_t *path, char**tokens, char *envp[]);
+void run_path(list_t *path, char **tokens, char *envp[]);
 
 /* free */
 void free_linked(list_t *head, char *buffer);
 void free_2darray(char **array);
 
+
+void endoffile(char *buffer);
 #endif /*SHELL_H*/

@@ -14,21 +14,18 @@ int main(int argc, char *argv[], char *envp[])
 	size_t n;
 	list_t *path;
 	int pipe = 0;
-	struct stat sb;
 
 	(void)argc; (void)argv;
 
 	buffer = NULL; path = NULL; tokens = NULL;
 
-	if (fstat(STDIN_FILENO, &sb) == -1)
-		exit(EXIT_FAILURE);
-	if ((sb.st_mode & S_IFMT) == S_IFIFO)
+	signal(SIGINT, signal_handle);
+	if (isatty(STDIN_FILENO) == 0)
 		pipe = 1;
 	if (pipe == 0)
 		run_prompt();
 
 	path = get_path();
-
 	while (getline(&buffer, &n, stdin) != -1)
 	{
 		tokens = tokenize(buffer);
@@ -47,5 +44,6 @@ int main(int argc, char *argv[], char *envp[])
 			_execute(tokens[0], tokens, envp);
 		free(tokens); run_prompt();
 	}
+
 	free_linked(path, buffer); return (0);
 }
