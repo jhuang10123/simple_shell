@@ -2,7 +2,6 @@
 /**
  * _putstring - prints a string
  * @str: string to print
- *
  */
 void _putstring(char *str)
 {
@@ -49,6 +48,7 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (s2[i] - s1[i]);
 }
+
 /**
  * _strcat - concatenates 2 strings
  * @dest: dest string

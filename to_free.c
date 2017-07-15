@@ -33,5 +33,6 @@ void free_2darray(char **array)
 	{
 		free(array[j]);
 	}
+
 	free(array);
 }

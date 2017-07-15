@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * tokenize - tokenizes a character string
- * @str: string to tokenixe
+ * @str: string to tokenize
  * Return: 2d array of tokenized string
  */
 char **tokenize(char *str)
