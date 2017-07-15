@@ -24,12 +24,20 @@ list_t *get_path(void)
 	while (token != NULL)
 	{
 		list = add_node_end(&head, token);
+<<<<<<< HEAD
 
 		if (list == NULL)
 			return (NULL);
 
 		token = strtok(NULL, ":");
 	}
+=======
 
+		if (list == NULL)
+			return (NULL);
+>>>>>>> e2fb8c5c9c982d8c3dbd41c5ab905c73079779c3
+
+		token = strtok(NULL, ":");
+	}
 	return (list);
 }

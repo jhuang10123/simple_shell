@@ -25,7 +25,11 @@ typedef struct list
 /**
  * struct builtin - struct storing builtin commands
  * @command: command for builtin
+<<<<<<< HEAD
  * @f: function pointer to builtin command
+=======
+ * @f: variable for builtin
+>>>>>>> e2fb8c5c9c982d8c3dbd41c5ab905c73079779c3
  */
 typedef struct builtin
 {
