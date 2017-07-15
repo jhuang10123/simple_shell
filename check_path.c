@@ -9,14 +9,14 @@ char *check_path(list_t *list, char *input)
 {
 	char *full_path;
 
-	full_path = malloc(sizeof(char *) * 100);
+	full_path = malloc(sizeof(char *) * 1024);
 	if (full_path == NULL)
 	{
 		perror("malloc Error");
 		return (NULL);
 	}
 
-	_memset(full_path);
+	/*_memset(full_path);*/
 
 	while (list != NULL)
 	{
@@ -24,7 +24,6 @@ char *check_path(list_t *list, char *input)
 		full_path = _strcpy(full_path, list->value);
 
 		full_path = _strcat(full_path, input);
-
 		list = list->next;
 
 		if (file_stat(full_path) == 0)
