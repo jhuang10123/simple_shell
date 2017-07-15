@@ -1,6 +1,9 @@
 #include "shell.h"
 /**
- * main - 
+ * main - takes user input and executes command if exist
+ * @argc: argument count
+ * @argv: agrument vector
+ * @envp: environment
  */
 int main(int argc, char *argv[], char *envp[])
 {
@@ -9,17 +12,12 @@ int main(int argc, char *argv[], char *envp[])
 	char **tokens;
 	size_t n;
 	list_t *path;
-	int pipe;
+	int pipe = 0;
 	struct stat sb;
 
-	(void)argc;
-	(void)argv;
+	(void)argc; (void)argv;
 
-	buffer = NULL;
-	pipe = 0;
-	filename = NULL;
-	path = NULL;
-	tokens = NULL;
+	buffer = NULL; filename = NULL; path = NULL; tokens = NULL;
 
 	if (fstat(STDIN_FILENO, &sb) == -1)
 		exit(EXIT_FAILURE);
@@ -32,11 +30,11 @@ int main(int argc, char *argv[], char *envp[])
 
 	path = get_path();
 
-	while (getline(&buffer, &n, stdin)!= -1)
+	while (getline(&buffer, &n, stdin) != -1)
 	{
 		tokens = tokenize(buffer);
 
-		if (_strcmp(tokens[0], "\n") == 0 || tokens == NULL)
+		if (tokens == NULL || _strcmp(tokens[0], "\n") == 0)
 		{
 		    run_prompt();
 		    continue;
@@ -47,19 +45,10 @@ int main(int argc, char *argv[], char *envp[])
 			built_retval = isbuiltin(tokens[0], envp);
 			if (built_retval == 1)
 			{
-
-				/* if (path == NULL) */
-				/* 	path = get_path(); */
 				filename = check_path(path, tokens[0]);
-
 				if (file_stat(filename) == 0)
-				{
 					_execute(filename, tokens, envp);
-
-				}
 			}
-			/* free_linked(path); */
-			free(filename);
 		}
 		else
 			_execute(tokens[0], tokens, envp);
