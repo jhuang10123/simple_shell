@@ -20,6 +20,7 @@ void _execute(char *filename, char *argv[], char *envp[])
 		if (execve(filename, argv, envp) == -1)
 			cmd_error(filename);
 	}
+
 	else
 		wait(&status);
 }

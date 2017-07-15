@@ -29,7 +29,7 @@ char *_memset(char *buffer)
 }
 
 /**
- * file_stat - check whether file exists
+ * file_stat - check whether a file exists
  * @str: string containing full path of a command
  * Return: 0 if file exist, else 1
  */
@@ -45,7 +45,7 @@ int file_stat(char *str)
 
 /**
  * cmd_error - error message for command not found
- * @filename: name of command
+ * @filename: name of command(user input)
  */
 void cmd_error(char *filename)
 {

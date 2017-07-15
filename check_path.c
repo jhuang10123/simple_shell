@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * check_path - concat user input to values of linked list
+ * check_path - concatenate user input to values of linked list
  * @list: linked list containing tokenized path
  * @input: user input
  * Return: full path if found, else original user input
@@ -18,7 +18,6 @@ char *check_path(list_t *list, char *input)
 
 	while (list != NULL)
 	{
-
 		full_path = _strcpy(full_path, list->value);
 
 		full_path = _strcat(full_path, input);
@@ -26,7 +25,6 @@ char *check_path(list_t *list, char *input)
 
 		if (file_stat(full_path) == 0)
 			return (full_path);
-
 	}
 	free(full_path);
 	return (input);
