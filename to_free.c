@@ -1,9 +1,10 @@
 #include "shell.h"
 /**
- * free_linked - frees a linked list
+ * free_linked - frees a linked list and buffer
  * @head: pointer to first node of list
+ * @buffer: buffer/string to free
  */
-void free_linked(list_t *head)
+void free_linked(list_t *head, char *buffer)
 {
 	list_t *temp;
 
@@ -13,6 +14,8 @@ void free_linked(list_t *head)
 		head = head->next;
 		free(temp);
 	}
+
+	free(buffer);
 }
 
 /**

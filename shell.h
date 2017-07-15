@@ -61,9 +61,10 @@ void cmd_error(char *filename);
 list_t *get_path(void);
 char *check_path(list_t *list, char *input);
 list_t *add_node_end(list_t **head, char *value);
+void run_path(list_t *path, char**tokens, char *envp[]);
 
 /* free */
-void free_linked(list_t *head);
+void free_linked(list_t *head, char *buffer);
 void free_2darray(char **array);
 
 #endif /*SHELL_H*/
