@@ -13,39 +13,28 @@ shell) that executes commands by evaluating user input.
 [get_path.c](https://github.com/jhuang10123/simple_shell/blob/master/get_path.c) - tokenize PATH and store values in a linked list
 [isbuiltin.c](https://github.com/jhuang10123/simple_shell/blob/master/isbuiltin.c) - searches for builtin and finds it's corresponding handling fcn
 [to_free.c](https://github.com/jhuang10123/simple_shell/blob/master/to_free.c) - frees lists
-<<<<<<< HEAD
 - `free_linked(list_t *head, char *buffer)` - frees a linked list and buffer  
 - `free_2darray(char **array)` - frees a 2D array  
-[run_path.c]() - store PATH in linked list and check if usr command exist  
-=======
-- `free_linked(list_t *head)` - frees a linked list
-- `free_2darray(char **array)` - frees a 2D array
+[run_path.c](https://github.com/jhuang10123/simple_shell/blob/master/run_path.c) - store PATH in linked list and check if usr command exist  
 
->>>>>>> e2fb8c5c9c982d8c3dbd41c5ab905c73079779c3
 
 Helper Functions:
 [helpers.c](https://github.com/jhuang10123/simple_shell/blob/master/helpers.c) - helper functions:
-<<<<<<< HEAD
 - `run_prompt(void)` - prints prompt to stdout  
 - `_memset(char *buffer)` - fills memory with null bytes  
 - `file_stat(char *str)` - check whether file exists  
 - `cmd_error(char *filename)`  
 - `signal_handle` - signal handler  
-=======
-- `run_prompt(void)` - prints prompt to stdout
-- `_memset(char *buffer)` - fills memory with null bytes
-- `file_stat(char *str)` - check whether file exists
-- `cmd_error(char *filename)`
->>>>>>> e2fb8c5c9c982d8c3dbd41c5ab905c73079779c3
+
 [strings.c](https://github.com/jhuang10123/simple_shell/blob/master/strings.c) - helper string functions:
-- `_putstring(char *str)`
-- `_strlen(char *s)`
-- `_strcmp(char *s1, char *s2)`
-- `*_strcat(char *dest, char *src)`
-- `_strcpy(char *dest, char *src)`
+- `_putstring(char *str)`  
+- `_strlen(char *s)`  
+- `_strcmp(char *s1, char *s2)`  
+- `*_strcat(char *dest, char *src)`  
+- `_strcpy(char *dest, char *src)`  
 [strings2.](https://github.com/jhuang10123/simple_shell/blob/master/strings2.c) - more helper string functions
-- `_strncmp(char *s1, char *s2, int n)`
-- `_putchar(char c)`
+- `_strncmp(char *s1, char *s2, int n)`  
+- `_putchar(char c)`  
 
 
 ## Usage
@@ -54,31 +43,20 @@ Simple shell currently support builtins `env` and `exit` as well as functions av
 Clone simple_shell repository:
 ` git clone https://github.com/jhuang10123/simple_shell.git `
 
-<<<<<<< HEAD
 Compile program:  
 `gcc -Wall -Wextra -Werror -pedantic *.c -o hsh`  
-=======
-Compile program:
-`gcc -Wall -Wextra -Werror -pedantic *.c -o hsh`
->>>>>>> e2fb8c5c9c982d8c3dbd41c5ab905c73079779c3
 
-Holberton shell can then be invoked by running the executable `hsh`
+Holberton shell can then be invoked by running the executable `hsh`  
 
 To run in interactive mode, enter `./hsh` and a command once gree\
-ted by prompt.
+ted by prompt.  
 
-To run in noninteractive mode, pipe command into this hsh: `echo \
-"ls -l" | ./hsh`
+To run in noninteractive mode, pipe command into this hsh:   `echo \
+"ls -l" | ./hsh`  
 
-To run a simple `ls -l` command in interactive mode:
-`($) ls -l`
+To run a simple `ls -l` command in interactive mode: `($) ls -l`  
 
 
 ## Authors
-<<<<<<< HEAD
 Jennifer Huang - [Github](https://github.com/jhuang10123)  
 Alexa Inga - [Github](https://github.com/alexainga2)  
-=======
-Alexa Inga -  [Github](https://github.com/alexainga2)
-Jennifer Huang - [Github](https://github.com/jhuang10123)
->>>>>>> e2fb8c5c9c982d8c3dbd41c5ab905c73079779c3
