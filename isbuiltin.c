@@ -1,9 +1,8 @@
 #include "shell.h"
 /**
  * isbuiltin - searches for builtin and finds it's corresponding handling fcn
- * @command - command to search
- * @token - tokenized string
- * @envp - enviornment
+ * @token: tokenized string
+ * @envp : enviornment
  * Return: 0 if command found, else 1.
  */
 int isbuiltin(char *token, char *envp[])
@@ -30,7 +29,7 @@ int isbuiltin(char *token, char *envp[])
 
 /**
  * env_var - prints environment variable
- * @envp - enviornment
+ * @envp: enviornment
  */
 void env_var(char *envp[])
 {
@@ -47,7 +46,7 @@ void env_var(char *envp[])
 
 /**
  * exit_fcn - exits function
- * @envp - parameter
+ * @envp: parameter
  */
 void exit_fcn(char *envp[])
 {

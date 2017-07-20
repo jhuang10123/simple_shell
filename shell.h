@@ -11,7 +11,7 @@
 #define DELIM "\n\r\t"
 
 /**
- * list - linked list
+ * struct list - linked list
  * @value: data stored
  * @next: address to next node
  */
@@ -22,8 +22,9 @@ typedef struct list
 } list_t;
 
 /**
- * builtin - struct storing builtin commands
+ * struct builtin - struct storing builtin commands
  * @command: command for builtin
+ * @f: variable for builtin
  */
 typedef struct builtin
 {
