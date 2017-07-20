@@ -17,8 +17,8 @@ void _execute(char *filename, char *argv[], char *envp[])
 
 	else if (pid == 0)
 	{
-		execve(filename, argv, envp);
-		perror("Execute Error");
+	  if (execve(filename, argv, envp) == -1)
+	    cmd_error(filename);
 	}
 	else
 		wait(&status);

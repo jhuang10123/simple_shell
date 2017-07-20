@@ -35,12 +35,22 @@ int main(int argc, char *argv[], char *envp[])
 			filename = check_path(path, tokens[0]);
 			if (file_stat(filename) == 0)
 				_execute(filename, tokens, envp);
+<<<<<<< HEAD
 			/*else*/
 			/*	cmd_error(filename);*/
 			free_linked(path), free(filename), free(tokens);
 			if (pipe == 0)
 				run_prompt();
 		}
+=======
+
+			free_linked(path);
+			free(filename);
+			free(tokens);
+
+			run_prompt();
+			}
+>>>>>>> 02de4669d20c8f15122d2e02823c4c02ababe1c1
 	}
 	free(buffer);
 	return (0);

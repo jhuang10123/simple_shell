@@ -21,21 +21,15 @@ list_t *get_path(void)
 
 	token = strtok(orig, ":");
 
-	while (orig != NULL)
-	{
-		if (token == NULL)
-			break;
-		{
-			list = add_node_end(&head, token);
+	while (token != NULL)
+	  {
+	    list = add_node_end(&head, token);
 
-			if (list == NULL)
-				return (NULL);
-		}
-		token = strtok(NULL, ":");
-	}
+	    if (list == NULL)
+	      return (NULL);
 
-	free(token);
+	    token = strtok(NULL, ":");
+	  }
 
-	list = head;
-	return (head);
+	return (list);
 }
