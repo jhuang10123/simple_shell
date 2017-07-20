@@ -7,7 +7,6 @@
 char **tokenize(char *str)
 {
 	char **array;
-	char *token;
 	int i;
 
 	array = malloc(sizeof(char *) * 100);
@@ -16,19 +15,11 @@ char **tokenize(char *str)
 		perror("Malloc Error");
 		return (NULL);
 	}
+	array[0] = strtok(str, DELIM);
 
-	token = malloc(sizeof(char) * 100);
-
-	token = strtok(str, DELIM);
-
-	for (i = 0; token != NULL; i++)
+	for (i = 1; array[i]; i++)
 	{
-		array[i] = token;
-		token = strtok(NULL, DELIM);
+		array[i] = strtok(NULL, DELIM);
 	}
-
-	array[i] = NULL;
-
-	free(token);
 	return (array);
 }
