@@ -1,8 +1,9 @@
 #include "shell.h"
 /**
- * _execute - executes command
+ * _execute - executes the command
  * @filename: name of file
  * @argv: arguments
+ * @envp: finding the environment
  */
 void _execute(char *filename, char *argv[], char *envp[])
 {

@@ -19,13 +19,13 @@ void run_prompt(void)
  */
 char *_memset(char *buffer)
 {
-        unsigned int i;
+	unsigned int i;
 
-        for (i = 0; buffer[i] != '\0'; i++)
+	for (i = 0; buffer[i] != '\0'; i++)
 	{
-                buffer[i] = '0';
-        }
-        return (buffer);
+		buffer[i] = '0';
+	}
+	return (buffer);
 }
 
 /**
@@ -35,17 +35,17 @@ char *_memset(char *buffer)
  */
 int file_stat(char *str)
 {
-        struct stat sb;
+	struct stat sb;
 
-        if (stat(str, &sb) == 0)
+	if (stat(str, &sb) == 0)
 		return (0);
-        else
-                return (1);
+	else
+		return (1);
 }
 
 /**
  * cmd_error - error message for command not found
- * @s: name of command
+ * @filename: name of command
  */
 void cmd_error(char *filename)
 {

@@ -8,23 +8,22 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-#define DELIM " \n\r\t"
+#define DELIM "\n\r\t"
 
 typedef struct list
 {
-        char *value;
-        struct list *next;
-
+	char *value;
+	struct list *next;
 } list_t;
 
 typedef struct builtin
 {
-        char *command;
-        void (*f)();
+	char *command;
+	void (*f)();
 } builtin_t;
 
 /* builtin */
-int isbuiltin(char* command, char *envp[]);
+int isbuiltin(char *command, char *envp[]);
 void env_var(char *envp[]);
 void exit_fcn(char *envp[]);
 
