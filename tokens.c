@@ -2,7 +2,7 @@
 /**
  * tokenize - tokenizes a character string
  * @str: string to tokenixe
- * @Return: 2d array of tokenized string
+ * Return: 2d array of tokenized string
  */
 char **tokenize(char *str)
 {
@@ -17,7 +17,7 @@ char **tokenize(char *str)
 		return (NULL);
 	}
 
-	token = malloc(sizeof(char ) * 100);
+	token = malloc(sizeof(char) * 100);
 
 	token = strtok(str, DELIM);
 
